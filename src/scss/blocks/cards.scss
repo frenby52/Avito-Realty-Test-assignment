@@ -1,0 +1,16 @@
+.cards__wrapper {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 900px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.cards__error {
+  margin: 0 auto;
+  text-align: center;
+  color: $red-color;
+  font-size: 20px;
+}

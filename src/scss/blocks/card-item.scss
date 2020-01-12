@@ -1,0 +1,42 @@
+.cards__card-item {
+  border: 1px solid $black-color;
+  margin-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 280px;
+  text-align: center;
+}
+
+.card-item__link {
+  width: 240px;
+  color: $black-color;
+}
+
+.card-item__title {
+  text-align: center;
+}
+
+.card-item__picture {
+  margin: 0;
+  line-height: 0;
+  font-size: 0;
+}
+
+.card-item__image {
+  width: 240px;
+  height: 180px;
+}
+
+.card-item__property-list {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.card-item__property-item {
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.card-item__property-title {
+  font-weight: bold;
+}
