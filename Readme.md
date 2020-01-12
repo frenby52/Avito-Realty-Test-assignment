@@ -2,7 +2,7 @@
 
 Выполнил: [Alexey Akutin](mailto:aakytin@mail.ru)
 
-##### ES6, SCSS, Webpack
+##### ES6, SCSS, БЭМ, Webpack
 
 ---
 
