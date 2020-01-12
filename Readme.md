@@ -1,4 +1,4 @@
-## Avito Safedeal Test assignment 
+## Avito Realty Test assignment 
 
 Выполнил: [Alexey Akutin](mailto:aakytin@mail.ru)
 
