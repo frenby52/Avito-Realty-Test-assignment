@@ -33,7 +33,8 @@ export default class CardPopup extends AbstractComponent {
 
     this._data = data;
     this._images = data.images;
-    this._imgIndex = 0;
+    this._imgIndex = null;
+    this._previews = Array.from(this.getElement().querySelectorAll(`.card-popup__gallery-image`));
     this._onGalleryImgClick();
     this._onGalleryButtonClick();
   }
@@ -56,32 +57,41 @@ export default class CardPopup extends AbstractComponent {
     galleryBtn.forEach((it) => {
       it.addEventListener(`click`, (evt) => {
         if (evt.target.classList.contains(`card-popup__slide-btn--next`)) {
+          this._previews[this._imgIndex].classList.remove(`card-popup__gallery-image--active`);
           let newIndex = this._imgIndex + 1;
           if (newIndex === this._images.length) {
             newIndex = 0;
           }
           this._getFullImage().src = this._images[newIndex];
           this._imgIndex = newIndex;
+          this._previews[this._imgIndex].classList.add(`card-popup__gallery-image--active`);
         }
         if (evt.target.classList.contains(`card-popup__slide-btn--prev`)) {
+          this._previews[this._imgIndex].classList.remove(`card-popup__gallery-image--active`);
           let newIndex = this._imgIndex - 1;
           if (this._imgIndex === 0) {
             newIndex = this._images.length - 1;
           }
           this._getFullImage().src = this._images[newIndex];
           this._imgIndex = newIndex;
+          this._previews[this._imgIndex].classList.add(`card-popup__gallery-image--active`);
         }
       });
     });
   }
 
   _onGalleryImgClick() {
-    const previews = this.getElement().querySelectorAll(`.card-popup__gallery-image`);
+    if (!this._imgIndex) {
+      this._imgIndex = 0;
+      this._previews[this._imgIndex].classList.add(`card-popup__gallery-image--active`);
+    }
 
-    previews.forEach((it) => {
+    this._previews.forEach((it) => {
       it.addEventListener(`click`, () => {
+        this._previews[this._imgIndex].classList.remove(`card-popup__gallery-image--active`);
         this._getFullImage().src = it.src;
         this._imgIndex = this._images.findIndex((currentValue) => currentValue === it.src);
+        this._previews[this._imgIndex].classList.add(`card-popup__gallery-image--active`);
       });
     });
   }
